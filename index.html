@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso Juan Vidigal - VI CBDPP - GCrim UEL</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Estilos de base e sobreposição de fundo */
+        body {
+            /* Imagem de fundo. Se 'fundo.jpg' falhar, o ::before (cor sólida) domina. */
+            background: url('fundo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            position: relative;
+            font-family: 'Inter', sans-serif;
+            color: #F0F0F0; /* Cor de texto principal (quase branco) */
+        }
+
+        /* Sobreposição de cor sólida (o verde-escuro do logo) */
+        body::before {
+            content: '';
+            position: fixed; /* Cobre a tela inteira, por trás do conteúdo */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #1b2618; /* Cor do logo GCRIM */
+            opacity: 0.92; /* 92% de opacidade, permitindo a imagem de fundo vazar sutilmente */
+            z-index: -1; /* Fica atrás de todo o conteúdo */
+        }
+
+        /* Estilo para o ícone do accordion (detalhes) */
+        summary {
+            list-style: none; /* Remove o marcador padrão */
+        }
+        summary::-webkit-details-marker {
+            display: none; /* Remove o marcador no Safari */
+        }
+
+        /* Gira o ícone '+' quando o <details> está aberto */
+        details[open] .plus-icon {
+            transform: rotate(45deg);
+        }
+    </style>
+
+    <script>
+        // Configuração customizada do Tailwind para adicionar nossas cores e fontes
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#E6C97F', // Dourado/Amarelo (da sua paleta original)
+                        'surface': '#2a3d2a', // Verde-escuro (um pouco mais claro que a base)
+                        'base': '#1b2618',    // Verde-escuro (cor do logo GCRIM)
+                        'accent-italic': '#C7D2FE' // Um azul-lavanda claro para itálicos
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif'] // Fonte de título
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="antialiased">
+
+    <div class="relative min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-8">
+
+        <main class="w-full max-w-4xl mx-auto p-6 sm:p-10 bg-surface/80 backdrop-blur-md rounded-2xl shadow-2xl border border-primary/20">
+
+            <header class="text-center mb-10">
+                <img src="logo.jpg" 
+                     alt="Logo GCrim-UEL" 
+                     class="h-20 w-20 mx-auto rounded-full shadow-lg border-2 border-primary mb-4"
+                     onerror="this.src='https://placehold.co/80x80/1b2618/E6C97F?text=GCRIM&font=playfair+display'; this.onerror=null;">
+                
+                <h1 class="font-serif text-4xl sm:text-5xl font-bold text-primary">
+                    GCrim-UEL
+                </h1>
+                <p class="text-lg text-accent-italic mt-1 italic"> Treino Aberto - VI Competição Brasileira de Direito e Processo Penal
+                </p>
+                <p class="text-sm text-gray-400 mt-1">
+                    31 de Outubro de 2025
+                </p>
+            </header>
+
+            <section class="mb-10">
+                <h2 class="font-serif text-3xl text-primary mb-4">O Caso de Juan Vidigal</h2>
+                <p class="text-gray-200 text-lg leading-relaxed mb-6">
+                    Juan Vidigal, um influenciador digital e membro do grupo religioso radical "Ordem dos Castos", foi condenado a <strong class="text-primary">mais de 25 anos de prisão</strong>. As acusações incluem <strong class="text-primary">financiar terrorismo</strong>, <strong class="text-primary">obstruir a justiça</strong> e <strong class="text-primary">coagir testemunhas</strong>. A condenação está ligada a um ataque a bomba que destruiu o "Templo das Águas Floridas", santuário de uma religião rival, e causou a <strong class="text-primary">morte de 17 pessoas</strong>. O caso, centro da VI CBDPP, está repleto de nuances probatórias e teses jurídicas complexas que serão debatidas hoje.
+                </p>
+                <a href="caso.pdf" 
+                   download="caso-vi-cbdpp.pdf"
+                   class="inline-block w-full sm:w-auto text-center bg-primary text-base font-bold py-3 px-8 rounded-lg shadow-lg transition-transform duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                   Baixe a Íntegra do Caso (.pdf)
+                </a>
+            </section>
+
+            <div class="space-y-4">
+
+                <details class="bg-base/60 rounded-lg shadow-md overflow-hidden group">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-serif text-xl text-primary font-bold hover:bg-base/70">
+                        <span>🌍 O Conflito</span>
+                        <span class="plus-icon text-primary text-3xl transition-transform duration-300 transform">+</span>
+                    </summary>
+                    <div class="p-5 border-t border-primary/20 text-gray-300 leading-relaxed">
+                        <p>O estado de Novas Veredas é palco de uma tensão religiosa entre:</p>
+                        <ul class="list-disc list-inside mt-4 space-y-2">
+                            <li><strong class="text-primary/90">Fraternidade da Pureza Divina:</strong> 35% da população. Prega a abstenção de qualquer forma de embriaguez.</li>
+                            <li><strong class="text-primary/90">Ordem dos Castos:</strong> Ala radicalizada da Fraternidade. Defende a "purificação social". <strong class="text-primary">Juan Vidigal</strong> e <strong class="text-primary">Pablo Gaviria</strong> são membros.</li>
+                            <li><strong class="text-primary/90">Círculo das Ervas Divinas:</strong> 4% da população. Focado no consumo ritualístico do chá "Ayavita".</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="bg-base/60 rounded-lg shadow-md overflow-hidden group">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-serif text-xl text-primary font-bold hover:bg-base/70">
+                        <span>🔥 O Atentado</span>
+                        <span class="plus-icon text-primary text-3xl transition-transform duration-300 transform">+</span>
+                    </summary>
+                    <div class="p-5 border-t border-primary/20 text-gray-300 leading-relaxed">
+                        <p class="mb-4">Em 19 de outubro de 2024, após o Círculo das Ervas Divinas distribuir o chá Ayavita em público, a "Ordem dos Castos" promoveu manifestações violentas.</p>
+                        <p>O "Templo das Águas Floridas", sede do Círculo e patrimônio histórico, foi alvo de um <strong class="text-primary">ataque a bomba</strong>. O incêndio resultante destruiu o templo tombado e causou a <strong class="text-primary">morte de 17 seguidores</strong> que estavam no local (fato desconhecido pelos executores).</p>
+                    </div>
+                </details>
+
+                <details class="bg-base/60 rounded-lg shadow-md overflow-hidden group">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-serif text-xl text-primary font-bold hover:bg-base/70">
+                        <span>👥 Personagens-Chave</span>
+                        <span class="plus-icon text-primary text-3xl transition-transform duration-300 transform">+</span>
+                    </summary>
+                    <div class="p-5 border-t border-primary/20 text-gray-300 leading-relaxed grid grid-cols-1 md:grid-cols-2 gap-4">
+                        
+                        <div class="bg-surface/50 p-4 rounded-lg border-l-4 border-primary">
+                            <strong class="font-serif text-primary text-lg">Juan Vidigal (O Réu)</strong>
+                            <p class="text-sm text-gray-300">Influenciador, dono da 'VidiBet' e membro da "Ordem dos Castos". Condenado por financiar o grupo.</p>
+                        </div>
+                        
+                        <div class="bg-surface/50 p-4 rounded-lg border-l-4 border-primary">
+                            <strong class="font-serif text-primary text-lg">Pablo Gaviria (O Mentor)</strong>
+                            <p class="text-sm text-gray-300">Líder da "Ordem dos Castos" e mentor do atentado. Dono do "Instituto Esperança e Luz", usado para doutrinação.</p>
+                        </div>
+
+                        <div class="bg-surface/50 p-4 rounded-lg border-l-4 border-primary">
+                            <strong class="font-serif text-primary text-lg">Tales Coelho (O Colaborador)</strong>
+                            <p class="text-sm text-gray-300">Executor do ataque (arremessou bomba). Fez <strong class="text-primary">delação premiada</strong> e confessou que Gaviria foi o mandante.</p>
+                        </div>
+
+                        <div class="bg-surface/50 p-4 rounded-lg border-l-4 border-primary">
+                            <strong class="font-serif text-primary text-lg">Maicon Braga (A Testemunha)</strong>
+                            <p class="text-sm text-gray-300">Contador da VidiBet. Relatou que Juan estava <strong class="text-primary">destruindo provas</strong> e <strong class="text-primary">coagindo funcionários</strong> a mentir.</p>
+                        </div>
+
+                    </div>
+                </details>
+
+                <details class="bg-base/60 rounded-lg shadow-md overflow-hidden group">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-serif text-xl text-primary font-bold hover:bg-base/70">
+                        <span>🔎 A Investigação</span>
+                        <span class="plus-icon text-primary text-3xl transition-transform duration-300 transform">+</span>
+                    </summary>
+                    <div class="p-5 border-t border-primary/20 text-gray-300 leading-relaxed">
+                        <h3 class="font-serif text-primary text-lg">Como chegaram em Juan?</h3>
+                        <p class="mb-4">A investigação notou vultuosas movimentações financeiras entre Pablo Gaviria e Juan Vidigal.</p>
+                        
+                        <h3 class="font-serif text-primary text-lg">Quais as provas?</h3>
+                        <ul class="list-disc list-inside mt-2 space-y-2">
+                            <li>Quebra de sigilo revelou <strong class="text-primary">+R$ 3,7 milhões</strong> em transferências da VidiBet para Gaviria e membros da Ordem.</li>
+                            <li>Algumas transferências continham justificativas como <strong class="text-primary">"Expansão Núcleo Castos"</strong>.</li>
+                            <li>Testemunho de Maicon Braga (contador) indicando <strong class="text-primary">destruição de provas e coação</strong> após vazamento da investigação na imprensa.</li>
+                            <li>Quebra de sigilo de Juan foi autorizada com fundamentação <strong class="text-primary">"per relationem"</strong> (adotando parecer do MPF).</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details class="bg-base/60 rounded-lg shadow-md overflow-hidden group">
+                    <summary class="flex justify-between items-center p-5 cursor-pointer font-serif text-xl text-primary font-bold hover:bg-base/70">
+                        <span>⚖️ A Condenação (+ de 25 anos de reclusão)</span>
+                        <span class="plus-icon text-primary text-3xl transition-transform duration-300 transform">+</span>
+                    </summary>
+                    <div class="p-5 border-t border-primary/20 text-gray-300 leading-relaxed">
+                        <p class="mb-4">Juan foi condenado à 25 anos, 8 meses e 16 dias de reclusão, no regime inicial fechado, pela 3ª Vara Criminal Federal (Juíza Maria Antônia Girodo) pela prática de 4 crimes em concurso material:</p>
+                        <ol class="list-decimal list-inside space-y-3">
+                            <li>
+                                <strong class="text-primary/90">Art. 3º, Lei Antiterrorismo (Prestar auxílio):</strong>
+                                <p class="text-sm text-accent-italic/80 pl-4 italic"> Baseado nos discursos de "purificação" em redes sociais. Pena-base aumentada em 1/8 pelas <strong class="text-primary">17 mortes</strong>.
+                                </p>
+                            </li>
+                            <li>
+                                <strong class="text-primary/90">Art. 6º, Lei Antiterrorismo (Financiar):</strong>
+                                <p class="text-sm text-accent-italic/80 pl-4 italic"> Baseado nas transferências financeiras (TED, PIX) para Pablo Gaviria.
+                                </p>
+                            </li>
+                            <li>
+                                <strong class="text-primary/90">Art. 2º, §1º, Lei de Orcrim (Embaraçar investigação):</strong>
+                                <p class="text-sm text-accent-italic/80 pl-4 italic"> Baseado no depoimento de Maicon Braga sobre destruição de servidores e arquivos.
+                                </p>
+                            </li>
+                             <li>
+                                <strong class="text-primary/90">Art. 344, CP (Coação no processo):</strong>
+                                <p class="text-sm text-accent-italic/80 pl-4 italic"> Baseado na <strong class="text-primary">"pressão psicológica e moral"</strong> sobre funcionários, interpretada como <strong class="text-primary">grave ameaça</strong>.
+                                </p>
+                            </li>
+                        </ol>
+                    </div>
+                </details>
+            </div>
+
+
+            <section class="mt-12">
+                <h2 class="font-serif text-3xl text-primary text-center mb-4">💬 Pontos Controversos</h2>
+                <p class="text-lg text-gray-300 text-center mb-8">
+                    O direito se aplica sobre fatos. Mas o que, exatamente, ficou comprovado? Fique atento a estas questões centrais:
+                </p>
+
+                <div class="space-y-5">
+                    
+                    <div class="p-5 bg-base/60 border-l-4 border-primary rounded-r-lg shadow-inner">
+                        <p class="text-gray-200 text-lg italic leading-relaxed">
+                            Será que Juan Vidigal tinha <span class="text-primary not-italic font-semibold">dolo de financiar</span> o terrorismo, ou ele acreditava estar apenas fazendo <span class="text-primary not-italic font-semibold">doações filantrópicas</span> para a igreja?
+                        </p>
+                    </div>
+
+                    <div class="p-5 bg-base/60 border-l-4 border-primary rounded-r-lg shadow-inner">
+                        <p class="text-gray-200 text-lg italic leading-relaxed">
+                            Um <span class="text-primary not-italic font-semibold">discurso em rede social</span> sobre "purificação espiritual", que não pede violência, pode ser considerado <span class="text-primary not-italic font-semibold">"auxílio"</span> a uma organização terrorista?
+                        </p>
+                    </div>
+
+                    <div class="p-5 bg-base/60 border-l-4 border-primary rounded-r-lg shadow-inner">
+                        <p class="text-gray-200 text-lg italic leading-relaxed">
+                            A <span class="text-primary not-italic font-semibold">"pressão psicológica"</span> de um chefe, sem ameaça física direta, é suficiente para configurar a <span class="text-primary not-italic font-semibold">"grave ameaça"</span> do crime de coação?
+                        </p>
+                    </div>
+
+                    <div class="p-5 bg-base/60 border-l-4 border-primary rounded-r-lg shadow-inner">
+                        <p class="text-gray-200 text-lg italic leading-relaxed">
+                            A juíza, que já foi <span class="text-primary not-italic font-semibold">vítima de um ataque</span> da "Ordem dos Castos", poderia ter julgado este caso? Isso <span class="text-primary not-italic font-semibold">anula a sentença</span>?
+                        </p>
+            
+                    </div>
+                    
+                    <div class="p-5 bg-base/60 border-l-4 border-primary rounded-r-lg shadow-inner">
+                        <p class="text-gray-200 text-lg italic leading-relaxed">
+                            Usar as <span class="text-primary not-italic font-semibold">17 mortes</span> (que serão julgadas em outro processo) para <span class="text-primary not-italic font-semibold">aumentar a pena-base</span> de Juan no crime de "auxílio" é uma medida válida?
+                        </p>
+                    </div>
+
+                </div>
+            </section>
+
+        </main>
+        
+        <footer class="w-full max-w-4xl mx-auto text-center mt-6 p-4 space-y-4">
+            <a href="https://www.instagram.com/gcrimuel/" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="inline-flex items-center justify-center gap-3 px-4 py-2 rounded-full bg-base/60 hover:bg-surface/80 transition-all duration-300 group">
+                <img src="instagram.png" 
+                     alt="Logo Instagram" 
+                     class="h-6 w-6 transition-transform group-hover:scale-110"
+                     onerror="this.src='https://placehold.co/24x24/1b2618/E6C97F?text=IG'; this.onerror=null; this.classList.add('rounded-full');">
+                <span class="font-medium text-gray-300 group-hover:text-primary transition-colors">
+                    Acesse nosso Instagram para a cobertura do evento!
+                </span>
+            </a>
+            <p class="text-sm text-gray-400/60">
+                Feito por João Marcos Dorigão |
+                GCrim - Grupo de Estudos em Ciências Criminais da UEL
+            </p>
+        </footer>
+    </div>
+
+</body>
+</html>
